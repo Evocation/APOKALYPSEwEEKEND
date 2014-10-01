@@ -22,19 +22,20 @@ now u have to open ur init.sqf and search for
 
 somewhere ABOVE it add these variables:
 
-	>ApocalypseWeekendBuildings = [];
-  >ApocalypseWeekendPeriods = [6,20,0]; //day 0 = Sunday, 1 = Monday, [...] 6 = Saturday, hour 20, minutes 0
->
-	>//Load in compiled functions
-	>...
+~~~~
+	ApocalypseWeekendBuildings = [];
+	ApocalypseWeekendPeriods = [6,20,0]; //day 0 = Sunday, 1 = Monday, [...] 6 = Saturday, hour 20, minutes 0
+	//Load in compiled functions
+	...
+~~~~
 
 search for
 
-  >if (isServer) then {
-    >// Add trader citys
-    >_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_13.Tavi\mission.sqf";
-    >_serverMonitor = [] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-  >};
+	if (isServer) then {
+		// Add trader citys
+		_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_13.Tavi\mission.sqf";
+		_serverMonitor = [] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	};
 
 and add the last line ABOVE the closing bracket
 
