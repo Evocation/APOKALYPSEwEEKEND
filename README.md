@@ -11,6 +11,9 @@ first u should download killzonekid's real_date.dll:
 
 http://killzonekid.com/arma-extension-real_date-dll-v3-0/
 
+extract it and past it to the root of ur @DayZ_Epoch_Server folder
+
+
 now u have to open ur init.sqf and search for
 
 ~~~~
