@@ -13,10 +13,12 @@ http://killzonekid.com/arma-extension-real_date-dll-v3-0/
 
 now u have to open ur init.sqf and search for
 
-	>//Load in compiled functions
-	>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";						>//Initilize the Variables (IMPORTANT:   >Must happen very early)
-	>call compile preprocessFileLineNumbers "addons\JAEM\variables.sqf";
-	>progressLoadingScreen 0.1;
+ ~~~~
+	//Load in compiled functions
+	call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";						//Initilize the Variables (IMPORTANT:   >Must happen very early)
+	call compile preprocessFileLineNumbers "addons\JAEM\variables.sqf";
+	progressLoadingScreen 0.1;
+~~~~
 
 somewhere ABOVE it add these variables:
 
