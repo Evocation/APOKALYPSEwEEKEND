@@ -3,6 +3,10 @@ APOKALYPSEwEEKEND
 
 
 this is a Script i started for another Server owner and i think im going to publish it, because i got some problems.. maybe there r ppl who wanna help :)
+actualy its job is going to set all buildings by player destroyable at a specific time on a specific day every week ( for example saturday 8 pm )
+
+currently i got problems with the addMPEventHandler i wanna use to realize its working
+some bugs i wanna fix later, but for the first it should work ofc....
 
 
 #Installation instructions
