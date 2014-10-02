@@ -11,14 +11,14 @@ maybe some1 got an idea about it without changing too much in the server_publish
 
 #Installation instructions
 
-1. u should download killzonekid's real_date.dll:
+#1. u should download killzonekid's real_date.dll:
 
 http://killzonekid.com/arma-extension-real_date-dll-v3-0/
 
 extract it and past it to the root of ur @DayZ_Epoch_Server folder
 
 
-2.1. now u have to open ur dayz_server.pbo and copy the apocalypseweekend.sqf into the modules folder
+#2.1. now u have to open ur dayz_server.pbo and copy the apocalypseweekend.sqf into the modules folder
 in the system folder u find the server_monitor.sqf, open it and search for
 
 ~~~~
@@ -48,7 +48,7 @@ add BELOW the last line
 ~~~~
 
 save, go back and change to compile folder
-2.2. open server_publishObject.sqf and search for
+#2.2. open server_publishObject.sqf and search for
 
 ~~~~
 	if (DZE_GodModeBase) then {
@@ -74,12 +74,12 @@ add BELOW the last line
 	ApocalypseWeekendBuildings set [count ApocalypseWeekendBuildings,_object];
 ~~~~
 
-2.3. repeat the last step for the server_swapObject.sqf
+#2.3. repeat the last step for the server_swapObject.sqf
 
 save and repack the 3 files to the correct folder it was before
 
 
-3. go to ur mission folder or .pbo, past the AW_Init.sqf there or in a sub folder of it and edit it to ur likings
+#3. go to ur mission folder or .pbo, past the AW_Init.sqf there or in a sub folder of it and edit it to ur likings
 
 
 open ur init.sqf and search for
