@@ -5,8 +5,8 @@ APOKALYPSEwEEKEND
 this is a Script i started for another Server owner and i think im going to publish it, because i got some problems.. maybe there r ppl who wanna help :)
 actualy its job is going to set all buildings by player destroyable at a specific time on a specific day every week ( for example saturday 8 pm )
 
-currently i got problems with the addMPEventHandler i wanna use to realize its working
-some bugs i wanna fix later, but for the first it should work ofc....
+my current problem is, that the new build buildings during the event r still able to get destroyed after event end, but back after restart
+maybe some1 got an idea about it without changing too much in the server_publishObject.sqf server_swapObject.sqf
 
 
 #Installation instructions
