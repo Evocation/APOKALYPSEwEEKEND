@@ -6,7 +6,7 @@ this is a Script i started for another Server owner and i think im going to publ
 actualy its job is going to set all buildings by player destroyable at a specific time on a specific day every week ( for example saturday 8 pm )
 
 my current problem is, that the buildings after the event r still able to get destroyed, but back after restart
-maybe some1 got an idea about it without changing too much in the server_publishObject.sqf or server_swapObject.sqf
+maybe some1 got an idea about it without changing too much in the server_publishObject.sqf, server_swapObject.sqf and server_monitor.sqf
 
 
 #Installation instructions
