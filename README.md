@@ -11,7 +11,8 @@ maybe some1 got an idea about it without changing too much in the server_publish
 
 #Installation instructions
 
-#1. u should download killzonekid's real_date.dll:
+#1.
+u should download killzonekid's real_date.dll:
 
 http://killzonekid.com/arma-extension-real_date-dll-v3-0/
 
