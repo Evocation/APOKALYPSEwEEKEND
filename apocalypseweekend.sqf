@@ -2,13 +2,12 @@ private "_runningdate";
 if (isNil "ApocalypseWeekendBuildings") then {
 	ApocalypseWeekendBuildings = [];
 };
-while {true} do {
+while {sleep 2;true} do {
 	_runningdate = "real_date" callExtension "+";
 	_runningdate = call compile _runningdate;
-	diag_log("[APOKALYPSEwEEKEND] _runningdate: " + str(_runningdate));
-	_runningdate =  [_runningdate select 3,_runningdate select 4,_runningdate select 6,"Error"];
 	//diag_log("[APOKALYPSEwEEKEND] _runningdate: " + str(_runningdate));
-	if (_runningdate select 2>= 0) then {
+	_runningdate =  [_runningdate select 3,_runningdate select 4,_runningdate select 6,"Error",_this select 3];
+	if (_runningdate select 2 >= 0) then {
 		_runningdate set [3,"Sunday"];
 		if (_runningdate select 2 >= 1) then {
 			_runningdate set [3,"Monday"];
@@ -28,36 +27,35 @@ while {true} do {
 				};
 			};
 		};
-	} else {
-		if (true) exitWith {diag_log("[APOKALYPSEwEEKEND] " + str(_runningdate select 3) + ": can't figure out the day of week.")};
 	};
-	if ((((ApocalypseWeekendPeriods select 0) == (_runningdate select 2)) && ((ApocalypseWeekendPeriods select 1) == (_runningdate select 0)) && ((ApocalypseWeekendPeriods select 2) == (_runningdate select 1))) || (testmod == 1)) then {
+	if ((((_this select 0) == (_runningdate select 2)) || ((_this select 0) == 7)) && ((_this select 1) == (_runningdate select 0)) && ((_this select 2) == (_runningdate select 1))) then {
 		DZE_GodModeBase = false;
 		diag_log("[APOKALYPSEwEEKEND] Starting on " + str(_runningdate select 3) + " at " + str(_runningdate select 0) + ":" + str(_runningdate select 1));
-		sleep 5;
-		[nil,nil,rTitleText,"[APOKALYPSEwEEKEND] EVENT STARTED!","PLAIN",10] call RE;
-		sleep 10;
 		{
-			diag_log("[APOKALYPSEwEEKEND] " + str(_x));
-			if (!(isnil "ApocalypseWeekendBuildings") && ((typeOf _x) in dayz_allowedObjects)) then {
+			if ((typeOf _x) in dayz_allowedObjects) then {
+				_x removeAllEventHandlers "HandleDamage";
 				_x removeAllMPEventHandlers "MPKilled";
-				_x removeAllMPEventHandlers "HandleDamage";
 				_x addMPEventHandler ["MPKilled",{_this call object_handleServerKilled;}];
+				_x enableSimulation false;
 			};
-		} count ApocalypseWeekendBuildings;
-		diag_log("[APOKALYPSEwEEKEND] EVENT STARTED! ALl PLAYER BUILD OBJECTS ARE DESTRUCTIBLE!");
-		sleep 360;
+		} forEach ApocalypseWeekendBuildings;
+		diag_log("[APOKALYPSEwEEKEND] EVENT STARTED! ALL PLAYER BUILD OBJECTS ARE DESTRUCTIBLE!");
+		[nil,nil,rTitleText,"[APOKALYPSEwEEKEND] EVENT STARTED!","PLAIN",10] call RE;
+		sleep (((_runningdate select 4) * 60) - 60);
 		[nil,nil,rTitleText,"[APOKALYPSEwEEKEND] 1 Minute left.","PLAIN",10] call RE;
 		sleep 60;
 		DZE_GodModeBase = true;
+		ApocalypseWeekendGMB = ApocalypseWeekendBuildings;
+		publicVariable "ApocalypseWeekendGMB";
 		{
-			diag_log("[APOKALYPSEwEEKEND] " + str(_x));
-			if (!(isnil "ApocalypseWeekendBuildings") && ((typeOf _x) in dayz_allowedObjects)) then {
+			if (((typeOf _x) in dayz_allowedObjects) && (alive _x)) then {
 				_x removeAllMPEventHandlers "MPKilled";
-				_x removeAllMPEventHandlers "HandleDamage";
 				_x addEventHandler ["HandleDamage",{false}];
+				_x addMPEventHandler ["MPKilled",{false}];
+				_x enableSimulation false;
 			};
-		} count ApocalypseWeekendBuildings;
+		} forEach ApocalypseWeekendBuildings;
+		[nil,nil,rTitleText,"[APOKALYPSEwEEKEND] EVENT ENDED!","PLAIN",10] call RE;
 		diag_log("[APOKALYPSEwEEKEND] EVENT ENDED!");
 	};
 };
