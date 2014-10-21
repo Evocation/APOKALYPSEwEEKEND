@@ -20,11 +20,6 @@ if (!isDedicated) then {
 			{
 				_x removeAllMPEventHandlers "MPKilled";
 				_x addEventHandler ["HandleDamage",{false}];
-				//_x removeAllEventHandlers "HandleDamage";
-				//_x allowDamage false;
-				//_x addMPEventHandler ["MPKilled",{false}];
-				//_x enableSimulation false;
-				//player reveal _x;
 			} foreach _this;
 		};
 	};
