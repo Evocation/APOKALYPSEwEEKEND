@@ -1,10 +1,10 @@
 if (isServer) then {
 	private "_depot";
 	_depot = [
-	"any",		//day: 0 = Sunday - 1 = Monday - [...] - 6 = Saturday - "any" or 7 = every day
-	15,			//hour: 1 - 24
-	43,			//minutes: 0-59
-	2			//event runtime in minutes
+	6,		//day: 0 = Sunday - 1 = Monday - [...] - 6 = Saturday - "any" or 7 = every day
+	20,			//hour: 1 - 24
+	0,			//minutes: 0-59
+	120			//event runtime in minutes
 	];
 	ApocalypseWeekendBuildings = [];
 	if (typeName (_depot select 0) == "STRING") then {
